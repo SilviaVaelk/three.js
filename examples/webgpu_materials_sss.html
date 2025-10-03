@@ -64,23 +64,28 @@
 
 				scene.add( new THREE.AmbientLight( 0xc1c1c1 ) );
 
-				const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.03 );
+				const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.5 );
 				directionalLight.position.set( 0.0, 0.5, 0.5 ).normalize();
 				scene.add( directionalLight );
 
 				const pointLight1 = new THREE.Mesh( new THREE.SphereGeometry( 4, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0xc1c1c1 } ) );
-				pointLight1.add( new THREE.PointLight( 0xc1c1c1, 4.0, 300, 0 ) );
+				pointLight1.add( new THREE.PointLight( 0xc1c1c1, 10.0, 300, 0 ) );
 				scene.add( pointLight1 );
 				pointLight1.position.x = 0;
 				pointLight1.position.y = - 50;
 				pointLight1.position.z = 350;
 
 				const pointLight2 = new THREE.Mesh( new THREE.SphereGeometry( 4, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0xc1c100 } ) );
-				pointLight2.add( new THREE.PointLight( 0xc1c100, 0.75, 500, 0 ) );
+				pointLight2.add( new THREE.PointLight( 0xc1c100, 5.0, 500, 0 ) );
 				scene.add( pointLight2 );
 				pointLight2.position.x = - 100;
 				pointLight2.position.y = 20;
 				pointLight2.position.z = - 260;
+
+				const sideLight = new THREE.PointLight( 0xff99ff, 6.0, 400 );
+				sideLight.position.set( 100, 100, 0 );
+				scene.add( sideLight );
+
 
 				renderer = new THREE.WebGPURenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
