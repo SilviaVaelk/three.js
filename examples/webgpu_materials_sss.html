@@ -123,7 +123,7 @@
 				imgTexture.wrapS = imgTexture.wrapT = THREE.RepeatWrapping;
 
 				const material = new THREE.MeshSSSNodeMaterial();
-				material.color = new THREE.Color( 1.0, 0.2, 0.2 );
+				material.color = new THREE.Color( 0x92F5B5 );
 				material.roughness = 0.3;
 				material.thicknessColorNode = texture( thicknessTexture ).mul( vec3( 0.5, 0.3, 0.0 ) );
 				material.thicknessDistortionNode = uniform( 0.1 );
